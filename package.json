@@ -1,6 +1,7 @@
 {
   "name": "web-api",
   "version": "1.0.0",
+  "main": "movies-api.js",
   "dependencies": {
     "express": "^4.21.2",
     "puppeteer": "^24.2.0"

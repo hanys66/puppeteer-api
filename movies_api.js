@@ -6,10 +6,14 @@ const app = express();
 const PORT = process.env.PORT || 3000; // Use the environment variable, fallback to 3000 for local dev
 
 // Function to scrape news from any category
-async function scrapeNews(category) {
-    const browser = await puppeteer.launch();
+async function scrapeNews() {
+   // const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: 'new', // Use the latest headless mode
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
+    });
     const page = await browser.newPage();
-    const url = `https://www.themoviedb.org/movie/${category}`;
+    const url = `https://www.themoviedb.org/movie/`;
     //const url = `https://www.themoviedb.org/movie`;
     await page.goto(url, { waitUntil: 'domcontentloaded' });
 
@@ -47,7 +51,7 @@ async function scrapeNews(category) {
 }
 
 // Express Route to Serve Scraped Data
-app.get('/:category', async (req, res) => {
+app.get('/movie', async (req, res) => {
     try {
         const { category } = req.params;
         const data = await scrapeNews(category);
