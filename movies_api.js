@@ -60,9 +60,9 @@ async function scrapeNews() {
         const data = await scrapeNews(category);
         res.json({ success: 'ok', articles: data });
     } catch (error) {
-       // res.status(500).json({ error: 'Something went wrong!' });
+         res.status(500).json({ error: 'Something went wrong!' });
        // res.status(400).json({ error: 'Not Found!' });
-         res.status(200).json({ error: 'code 200 !' });
+       // res.status(200).json({ error: 'code 200 !' });
        // console.log(https.STATUS_CODES);
 
         // res.statusCodes;
