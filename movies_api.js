@@ -51,7 +51,8 @@ async function scrapeNews() {
 }
 
 // Express Route to Serve Scraped Data
-app.get('/movie', async (req, res) => {
+//app.get('/movie', async (req, res) => {
+    app.get('/', async (req, res) => {
     try {
         const { category } = req.params;
         const data = await scrapeNews(category);
