@@ -66,7 +66,7 @@ async function scrapeNews() {
        // res.status(200).json({ error: 'code 200 !' });
        // console.log(https.STATUS_CODES);
 
-        // res.statusCodes;
+          res.statusCodes;
     }
 });
 
