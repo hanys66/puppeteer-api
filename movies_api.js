@@ -53,13 +53,13 @@ async function scrapeNews() {
 // Express Route to Serve Scraped Data
 //app.get('/movie', async (req, res) => {
     app.get('/', async (req, res) => {
-    try {
+    //try {
         const { category } = req.params;
         const data = await scrapeNews(category);
         res.json({ success: 'ok', articles: data });
-    } catch (error) {
-        res.status(500).json({ error: 'Something went wrong!' });
-    }
+    //} catch (error) {
+        res.status(500).json({ error: 'Something went wrong! ' });
+   // }
 });
 
 app.listen(PORT, () => {
