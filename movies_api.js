@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000; // Use the environment variable, fallback
 async function scrapeNews() {
    // const browser = await puppeteer.launch();
     const browser = await puppeteer.launch({
-        headless: 'new', // Use the latest headless mode
+        headless: true, // Use the latest headless mode
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
     });
     const page = await browser.newPage();
