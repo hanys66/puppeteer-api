@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000; // Use the environment variable, fallback
 async function scrapeNews() {
    // const browser = await puppeteer.launch();
     const browser = await puppeteer.launch({
-        headless: true, // Use the latest headless mode
+        headless: 'new', // Use the latest headless mode
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
     });
     const page = await browser.newPage();
@@ -53,13 +53,13 @@ async function scrapeNews() {
 // Express Route to Serve Scraped Data
 //app.get('/movie', async (req, res) => {
     app.get('/', async (req, res) => {
-    //try {
+    try {
         const { category } = req.params;
         const data = await scrapeNews(category);
         res.json({ success: 'ok', articles: data });
-    //} catch (error) {
-        res.status(500).json({ error: 'Something went wrong! ' });
-   // }
+    } catch (error) {
+        res.status(500).json({ error: 'Something went wrong!' });
+    }
 });
 
 app.listen(PORT, () => {
