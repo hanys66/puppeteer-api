@@ -62,8 +62,8 @@ async function scrapeNews() {
     } catch (error) {
        // console.error("Error:", error.message);
          // res.status(500).json({ error: 'Something went wrong!' });
-        return res.status(500).json({error: "Internal Server Error",details: error.message, });
-       // res.status(400).json({ error: 'Not Found!' });
+       // return res.status(500).json({error: "Internal Server Error",details: error.message, });
+         res.status(400).json({ error: 'Not Found!' });
        // res.status(200).json({ error: 'code 200 !' });
        // console.log(https.STATUS_CODES);
 
