@@ -1,8 +1,13 @@
 const express = require('express');
 const puppeteer = require('puppeteer');
+const cors = require("cors");
 const http = require("http");
 const https = require("https");
 const app = express();
+app.use(cors({
+    origin: "*",  // Allow all origins (or specify your frontend URL)
+    credentials: true
+}));
 const PORT = process.env.PORT || 3000; // Use the environment variable, fallback to 3000 for local dev
 // Function to scrape news from any category
 async function scrapeNews() {
@@ -34,6 +39,7 @@ async function scrapeNews() {
     await browser.close();
     return articles;
 }
+app.use(express.json());
     app.get('/', async (req, res) => {
     try {
         const { category } = req.params;
