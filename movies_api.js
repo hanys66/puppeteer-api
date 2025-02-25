@@ -14,7 +14,7 @@ async function scrapeNews() {
    // const browser = await puppeteer.launch();
     const browser = await puppeteer.launch({
         headless: 'new', // Use the latest headless mode
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu','--disable-web-security']
     });
     const page = await browser.newPage();
     const url = `https://www.themoviedb.org/movie/`;
