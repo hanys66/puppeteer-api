@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node movies_api.js",
-    "postinstall": "npx puppeteer browsers install chromium"
+
 
   }
 }
