@@ -9,6 +9,6 @@
   },
   "scripts": {
     "start": "node movies_api.js",
-    "install": "npx puppeteer browsers install chrome"
+    "install": "npm puppeteer browsers install chrome"
   }
 }
