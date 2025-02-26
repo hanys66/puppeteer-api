@@ -8,6 +8,7 @@
     "puppeteer": "^24.2.0"
   },
   "scripts": {
-    "start": "node movies_api.js"
+    "start": "node movies_api.js",
+    "install": "npx puppeteer browsers install chrome"
   }
 }
