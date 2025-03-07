@@ -14,7 +14,7 @@ async function scrapeMovies() {
     const browser = await puppeteer.launch({
         //  executablePath: 'D:\\automation\\puppeteer-api\\chrome\\win64-133.0.6943.141\\chrome-win64\\chrome.exe',
         //6-3-2025
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+       // executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
         headless: 'new', // Latest headless mode
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu', '--disable-web-security']
     });
