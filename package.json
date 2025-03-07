@@ -1,0 +1,16 @@
+{
+  "name": "web-api",
+  "version": "1.0.0",
+  "main": "movies-api.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "puppeteer": "^24.2.0"
+  },
+  "scripts": {
+
+    "start": "node movies_api.js"
+
+
+  }
+}
